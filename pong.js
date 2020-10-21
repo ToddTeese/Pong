@@ -41,4 +41,7 @@ class Ball extends Actor {
 
 const ball = new Ball(canvas.width / 2, canvas.height / 2, 16, '#FFF');
 
+console.log(ball);
+console.log(ball.x + ':' + ball.y);
+
 ball.draw(ctx);
