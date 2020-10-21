@@ -56,7 +56,9 @@ class Ball extends Actor {
 
 const ball = new Ball(canvas.width / 2, canvas.height / 2, 16, '#FFF');
 
-
+canvas.addEventListener('keydown', event => {
+    console.log(event);
+})
 
 function update() {
     ball.update(canvas.width, canvas.height);
