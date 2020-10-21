@@ -44,6 +44,13 @@ class Ball extends Actor {
     update(maxX, maxY) {
         this.x += this.xVel;
         this.y += this.yVel;
+
+        if(this.x < 0 || this.x > maxX - this.width) {
+            this.xVel *= -1;
+        }
+        if(this.y < 0 || this.y > maxY - this.height) {
+            this.yVel *= -1;
+        }
     }
 }
 
