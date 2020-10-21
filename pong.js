@@ -28,6 +28,7 @@ class Actor {
     }
     
     draw(ctx) {
+        
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
@@ -65,12 +66,12 @@ function update() {
 }
 
 function draw() {
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0,0, canvas.width, canvas.height);
     ball.draw(ctx);
 }
 
 while(true) {
     update();
     draw();
-    console.log(ball);
-    console.log(ball.x + ':' + ball.y);
 }
