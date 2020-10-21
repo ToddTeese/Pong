@@ -15,7 +15,7 @@ ctx.fillRect(0,0, canvas.width, canvas.height);
 
 // ball
 
-//
+// scores
 
 class Actor {
 
@@ -36,6 +36,14 @@ class Actor {
 class Ball extends Actor {
     constructor(x, y, size, color) {
         super(x, y, size, size, color);
+        this.xVel = 1;
+        this.yVel = 1;
+    }
+
+    // update
+    update(maxX, maxY) {
+        this.x += this.xVel;
+        this.y += this.yVel;
     }
 }
 
@@ -44,4 +52,17 @@ const ball = new Ball(canvas.width / 2, canvas.height / 2, 16, '#FFF');
 console.log(ball);
 console.log(ball.x + ':' + ball.y);
 
+function update() {
+    ball.update(canvas.width, canvas.height);
+}
+
+function draw() {
+    ball.draw(ctx);
+}
+
 ball.draw(ctx);
+
+while(true) {
+    update();
+    draw();
+}
